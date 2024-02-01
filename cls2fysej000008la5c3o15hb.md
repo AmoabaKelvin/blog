@@ -49,7 +49,7 @@ I opted for Redis since it is the most common and the one with the most availabl
 
 ### Caching Strategy
 
-Although there are numerous caching strategies, I stuck to the **write-through cache** strategy. Here, we write data to both the cache (Redis in this case) and the underlying database (MySQL) simultaneously. With this in place, what essentially happens is that, until a cache is invalidated or evicted, we will hit `cache-miss` since the cache is readily pre-populated.
+Although there are numerous caching strategies, I stuck to the **write-through cache** strategy. Here, we write data to both the cache (Redis in this case) and the underlying database (MySQL) simultaneously. With this in place, what essentially happens is that, until a cache is invalidated or evicted, we will not hit `cache-miss` since the cache is readily pre-populated.
 
 ### Cache Invalidation Strategy
 
@@ -90,8 +90,8 @@ Even if the link is not found in the cache and we have to read from the DB, it m
 
 Not to forget, reading from the cache also means avoiding all the network overhead in retrieving something from the DB, and hence, we are able to respond to requests even much faster.
 
-Initially, a single redirect resolution could take about 1.2s, but with all this implemented, we can literally do the same work in just shy of 200ms 🚀. Over 800 ms of work cut off!  
-  
+Initially, a single redirect resolution could take about 1.2s, but with all this implemented, we can literally do the same work in just shy of 200ms 🚀. Over 800 ms of work cut off!
+
 In fact, implementing this and thinking through everything has really been fun and interesting! Now I can save precious free-tier resources and also ensure that my users are still happy with the service, so they keep referring more individuals.
 
 Caching is really a game-changer!!!!
