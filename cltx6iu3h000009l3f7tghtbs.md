@@ -1,6 +1,7 @@
 ---
 title: "IP Addresses"
 seoTitle: "IP Addresses"
+seoDescription: "Learn about IP addresses, various types and how they get assigned to devices in this post!"
 datePublished: Mon Mar 18 2024 16:47:54 GMT+0000 (Coordinated Universal Time)
 cuid: cltx6iu3h000009l3f7tghtbs
 slug: ip-addresses
